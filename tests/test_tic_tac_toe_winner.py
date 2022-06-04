@@ -98,13 +98,26 @@ def test_vertical_win():
 # @pytest.mark.skip(reason="Not possible to test at this time")
 def test_diagonal_win():
     # arrange
+    matrix_left_win = [
+        ['O', 'O', 'X'],
+        ['X', 'O', 'X'],
+        ['X', '', 'O']
+        ]
+    matrix_right_win = [
+        ['X', 'O', 'X'],
+        ['O', 'X', ''],
+        ['X', 'O', 'O']
+    ]
 
-@pytest.mark.skip(reason="Not possible to test at this time")
-def test_game_not_over():
-    # arrange
-    pass
+    # act
+    left_win = tic_tac_toe_winner(matrix_left_win)
+    right_win = tic_tac_toe_winner(matrix_right_win)
 
-@pytest.mark.skip(reason="Not possible to test at this time")
+    # assert
+    assert left_win == 'O'
+    assert right_win == 'X'
+
+# @pytest.mark.skip(reason="Not possible to test at this time")
 def test_x_winner_board_not_full():
     # arrange
     matrix = [
@@ -116,12 +129,9 @@ def test_x_winner_board_not_full():
     result = tic_tac_toe_winner(matrix)
     # assert
     assert result == 'X'
-    
-    
 
 
-
-@pytest.mark.skip(reason="Not possible to test at this time")
+# @pytest.mark.skip(reason="Not possible to test at this time")
 def test_nominal_board():
     # nominal test case
     # Arrange
@@ -135,7 +145,7 @@ def test_nominal_board():
     # Assert
     assert result == 'X'
 
-@pytest.mark.skip(reason="Not possible to test at this time")
+# @pytest.mark.skip(reason="Not possible to test at this time")
 def test_empty_board():
     # edge test case
     board = [['', '', ''],
@@ -148,7 +158,7 @@ def test_empty_board():
     # Assert
     assert result is None
 
-@pytest.mark.skip(reason="Not possible to test at this time")
+# @pytest.mark.skip(reason="Not possible to test at this time")
 def test_tied():
     # alternative test case
     # Arrange
